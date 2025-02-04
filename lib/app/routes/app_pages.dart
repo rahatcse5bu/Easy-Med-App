@@ -26,7 +26,8 @@ static const OCR = '/ocr';
 }
 
 class AppPages {
-  static const initial = Routes.home;
+  static const initial = Routes.OCR
+  ;
 
   static final routes = [
     GetPage(

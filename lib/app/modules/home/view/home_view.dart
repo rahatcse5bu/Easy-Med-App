@@ -1,4 +1,3 @@
-import 'package:IT_Way_BD/app/constant/app_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -7,6 +6,7 @@ import '../../../common/custom_buttons.dart';
 import '../../../common/custom_simple_appbar.dart';
 import '../../../common/utils/task_utils.dart';
 import '../../../common/widgets/bottom_nav_bar_widget.dart';
+import '../../../constant/app_color.dart';
 import '../../it_way_bd_tasks/views/it_way_bd_task_view.dart';
 import '../controller/home_controller.dart';
 import '../widgets/home_main_widget.dart';
@@ -18,7 +18,7 @@ class HomeView extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomSimpleAppBar.appBar(
-          title: 'IT Way BD Task',
+          title: 'Easy Med',
           backgroundColor: Colors.white,
           centerTitle: true,
         isBackIcon: false,

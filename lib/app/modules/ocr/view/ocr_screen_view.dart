@@ -1,3 +1,4 @@
+import 'package:easy_med/app/common/custom_simple_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
@@ -5,10 +6,12 @@ import 'package:image_picker/image_picker.dart';
 import '../controller/ocr_controller.dart';
 
 class OCRScreen extends GetView<OCRController> {
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('OCR Text Recognition')),
+      appBar: CustomSimpleAppBar.appBar(title: "Easy Med"),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -16,7 +19,7 @@ class OCRScreen extends GetView<OCRController> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Obx(() => controller.imageFile.value != null
-                  ? Image.file(controller.imageFile.value!, height: 250)
+                  ? Image.file(controller.imageFile.value!, height: 200)
                   : const Icon(Icons.image, size: 100)),
               const SizedBox(height: 20),
               ElevatedButton.icon(
@@ -30,18 +33,16 @@ class OCRScreen extends GetView<OCRController> {
                 onPressed: () => controller.pickImage(ImageSource.camera),
               ),
               const SizedBox(height: 20),
-              const Text(
-                'Recognized Text:',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-              ),
-              Obx(() => Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      controller.extractedText.value,
-                      textAlign: TextAlign.center,
-                      style: const TextStyle(fontSize: 14),
-                    ),
+
+              // Display Extracted Data
+              Obx(() => Text(
+                    "Medicine: ${controller.medicineName.value}",
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   )),
+              Obx(() => Text("Generic: ${controller.genericName.value}")),
+              Obx(() => Text("Quantity: ${controller.quantity.value}")),
+              Obx(() => Text("Price: ${controller.price.value}")),
+              Obx(() => Text("Expiry: ${controller.expiryDate.value}")),
             ],
           ),
         ),
