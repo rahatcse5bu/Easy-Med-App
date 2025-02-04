@@ -5,6 +5,8 @@ import '../modules/home/binding/home_binding.dart';
 import '../modules/home/view/home_view.dart';
 import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
+import '../modules/ocr/bindings/ocr_binding.dart';
+import '../modules/ocr/view/ocr_screen_view.dart';
 import '../modules/register/bindings/register_binding.dart';
 import '../modules/register/views/register_view.dart';
 
@@ -17,7 +19,7 @@ class Routes {
   static const login = '/login';
   static const profile = '/profile';
   static const home = '/home';
-  static const tasks = '/tasks';
+static const OCR = '/ocr';
 
   // Dynamic route generator for single task
   static String singleTask(String id) => '/task/$id';
@@ -52,9 +54,9 @@ class AppPages {
 
 
     GetPage(
-      name: Routes.tasks,
-      page: () =>  ITWayBDTaskView(),
-      binding: ITWayBDTaskBinding(),
+      name: Routes.OCR,
+      page: () => OCRScreen(),
+      binding: OCRBinding(),
     ),
  
   ];
